@@ -4,7 +4,7 @@ This repository includes code for training new models using huggingface's transf
 
 - Akkadian: 𒄿 𒈾 𒌗 𒃶 𒌓 𒐉 𒆚 𒀀 𒈾 𒆳 𒆸 𒄭 𒇻 𒁺 𒅅 𒆳 𒁀 𒀀 𒍝 𒆳 𒊓 𒅈 𒁀 𒇷 𒀀 𒆳 𒁲 𒁺 𒀀 𒆷 𒀀 𒁲 𒌷 𒈨 𒌍 𒉌 𒃻 𒅆 𒁲 𒀀 𒇉 𒊒 𒌑 𒊒 𒊭 𒆳 𒈨 𒄴 𒊑 𒀝 𒋤 𒊩 𒆷 𒋢 𒉡 𒃻 𒋗 𒈨 𒌍 𒋗 𒉡 𒌑 𒊺 𒍝 𒀀 𒀀 𒈾 𒌷 𒅀 𒀸 𒋩 𒌒 𒆷' 
 - English: 'in the month kislimu the fourth day i marched to the land habhu i conquered the lands bazu sarbaliu and didualu together with the cities on the banks of the river ruru of the land mehru i brought forth their booty and possessions and brought them to my city assur' 
-- Prediction: 'in the mo nth kislev ix i marched to the land habhu the lands habhu and habhu together with cities in the environs of the land hatti i brought their booty possessions and possessions to my city assur'
+- Prediction: 'in the month kislev ix i marched to the land habhu the lands habhu and habhu together with cities in the environs of the land hatti i brought their booty possessions and possessions to my city assur'
 
 # Models
 
