@@ -1,7 +1,7 @@
 prediction_length = 60
 
 import sys, os, datetime, pwd
-user_directory = pwd.getpwuid(os.getuid()).pw_dir\
+user_directory = pwd.getpwuid(os.getuid()).pw_dir
 import json
 import torch
 import random
