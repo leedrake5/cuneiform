@@ -1,0 +1,1358 @@
+{
+    "places": {
+        "count": 58,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/places/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/7/",
+                "alternative_name": [],
+                "name": "",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/21/",
+                "alternative_name": [],
+                "name": "(Babylon)",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/42/",
+                "alternative_name": [],
+                "name": "(Borsippa)",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/45/",
+                "alternative_name": [],
+                "name": "(Sippar)",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/41/",
+                "alternative_name": [],
+                "name": "(Uruk)",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/40/",
+                "alternative_name": [],
+                "name": "(Uruk?)",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/28/",
+                "alternative_name": [],
+                "name": "Addiāya",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                "alternative_name": [],
+                "name": "Babylon",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/14/",
+                "alternative_name": [],
+                "name": "Bitqa ša Bēl-ētir šīhu ša Bēlet-ša-Uruk",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/1/",
+                "alternative_name": [],
+                "name": "Borsippa",
+                "geonames_id": "",
+                "lat": null,
+                "lng": null
+            }
+        ]
+    },
+    "labels": {
+        "count": 1,
+        "next": null,
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/labels/1/",
+                "label": "māt tamti",
+                "label_type": "",
+                "isoCode": ""
+            }
+        ]
+    },
+    "regions": {
+        "count": 10,
+        "next": null,
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/6/",
+                "name": ""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/10/",
+                "name": "Al-Yahudu (Nippur)"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                "name": "Babylon"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/1/",
+                "name": "Borsippa"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/7/",
+                "name": "Larsa"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/9/",
+                "name": "Nineveh"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/3/",
+                "name": "Nippur"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/4/",
+                "name": "Sippar"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/8/",
+                "name": "Ur"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "name": "Uruk"
+            }
+        ]
+    },
+    "archives": {
+        "count": 35,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/archives/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/11/",
+                "name": ""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/35/",
+                "name": "\"Governor's Archive\""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/20/",
+                "name": "Adad-šamê"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/15/",
+                "name": "Ahiya'ūtu"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/36/",
+                "name": "Atû"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/3/",
+                "name": "Bēl-eṭēri-Šamaš"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/22/",
+                "name": "Bēl-kāṣir/Šamaš-zēru-ibni//Rēˀi-sisê"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/10/",
+                "name": "Bēl-rēmanni"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/16/",
+                "name": "Ea-ilūtu-bāni"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/2/",
+                "name": "Eanna"
+            }
+        ]
+    },
+    "dossiers": {
+        "count": 6,
+        "next": null,
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/1/",
+                "name": ""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/2/",
+                "name": "Astronomical Diaries"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/4/",
+                "name": "BCHP"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/",
+                "name": "Historical-Literary Texts"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/5/",
+                "name": "Lābâši/Anu-zēru-iddin//Ekur-zakir"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/3/",
+                "name": "Lābâši/Anu-zēru-iddin//Ekur-zākir"
+            }
+        ]
+    },
+    "scribes": {
+        "count": 309,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/7/",
+                "name": ""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/4/",
+                "name": "(omitted)"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/162/",
+                "name": "Ahu-ittabši/Līšir"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/269/",
+                "name": "Amurru-aḫḫē-iddin (/Bēl-šumu-iškun)"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/262/",
+                "name": "Amīl-Nanāya"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/250/",
+                "name": "Anu-ahu-iddin"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/107/",
+                "name": "Anu-iqīsanni/Nidinti-Anu/Sîn-leqe-unnīnnī"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/142/",
+                "name": "Anu-uballiṭ/Ina-qibit-Anu//Ekur-zakir"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/144/",
+                "name": "Anu-uballiṭ/Ina-qibit-Anu//Ekur-zakirIdat-Anu/Dumqi-Anu//Arad-Rēš"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/12/",
+                "name": "Anu-uballiṭ/Itti-Anu-nuhšu//Sîn-leqe-unnīnnī"
+            }
+        ]
+    },
+    "periods": {
+        "count": 8,
+        "next": null,
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/6/",
+                "name": ""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                "name": "Ach"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/7/",
+                "name": "EH"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/3/",
+                "name": "EnB"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                "name": "EnB"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/4/",
+                "name": "Par"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/5/",
+                "name": "Sel"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/1/",
+                "name": "nB"
+            }
+        ]
+    },
+    "texttypes": {
+        "count": 42,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/11/",
+                "name": ""
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/4/",
+                "name": "Account text"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/31/",
+                "name": "Administration: personnel"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/36/",
+                "name": "Adoption"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/6/",
+                "name": "Astronomical Diary"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/18/",
+                "name": "Business contract (harrānu)"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/12/",
+                "name": "Chronicle"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/26/",
+                "name": "Decree"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/23/",
+                "name": "Dedication (širku)"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/39/",
+                "name": "Exchange of goods"
+            }
+        ]
+    },
+    "signs": {
+        "count": 239,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/signs/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/239/",
+                "sign_name": "",
+                "abz_number": null,
+                "meszl_number": null,
+                "image_1": null,
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/107/",
+                "sign_name": "A",
+                "abz_number": "579",
+                "meszl_number": "839",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_579.bmp",
+                "image_2": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_001_VQMYMDP.bmp"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/142/",
+                "sign_name": "A'",
+                "abz_number": "397",
+                "meszl_number": "635",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_397.bmp",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/150/",
+                "sign_name": "AB",
+                "abz_number": "128",
+                "meszl_number": "223",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_128.bmp",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/157/",
+                "sign_name": "AD",
+                "abz_number": "145",
+                "meszl_number": "258",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_145.bmp",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/234/",
+                "sign_name": "AG",
+                "abz_number": "97",
+                "meszl_number": "127",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/ag_97.jpg",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/143/",
+                "sign_name": "AH",
+                "abz_number": "398",
+                "meszl_number": "636",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_398.bmp",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/117/",
+                "sign_name": "AL",
+                "abz_number": "298",
+                "meszl_number": "474",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_298.bmp",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/159/",
+                "sign_name": "AM",
+                "abz_number": "170",
+                "meszl_number": "309",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_170.bmp",
+                "image_2": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/signs/36/",
+                "sign_name": "AMA",
+                "abz_number": "237",
+                "meszl_number": "392",
+                "image_1": "http://labasi.acdh.oeaw.ac.at/media/sign_img/sign_237.bmp",
+                "image_2": null
+            }
+        ]
+    },
+    "tablets": {
+        "count": 667,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/364/",
+                "archive": null,
+                "place": null,
+                "scribe": null,
+                "period": null,
+                "text_type": null,
+                "text_reference": "",
+                "title": "",
+                "cdli_no": "",
+                "nabucco_no": "",
+                "museum_no": "",
+                "place_information": "",
+                "year": null,
+                "date_not_after": 1,
+                "date_not_before": 1500,
+                "babyloneian_time": "",
+                "date_comment": null,
+                "ductus": "",
+                "content": null,
+                "distinctive_protagonists": "",
+                "bibliography": "",
+                "region": null,
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/479/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 1106",
+                "title": "ABL 1106",
+                "cdli_no": "P237186",
+                "nabucco_no": "",
+                "museum_no": "82-5-22,131",
+                "place_information": "internal",
+                "year": 651,
+                "date_not_after": 652,
+                "date_not_before": 648,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The letter dates to the period of the rebellion of Šamaš-šum-ukīn. The year 651 was chosen at random.",
+                "ductus": "",
+                "content": "Urukean official to Assurbanipal: state of affairs in the city - orders to fortify the city against rebels, etc",
+                "distinctive_protagonists": "Nabû-ušabši (?)",
+                "bibliography": "Frame, PIHANS 69, p.158f.",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/456/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 1204",
+                "title": "ABL 1204",
+                "cdli_no": "P236965",
+                "nabucco_no": "",
+                "museum_no": "81-2-4,078",
+                "place_information": "internal",
+                "year": 651,
+                "date_not_after": 627,
+                "date_not_before": 668,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The year 651 was chosen at random as it lies towards the mid-point of the possible time range.",
+                "ductus": "",
+                "content": "NN of Uruk to Assurbanipal",
+                "distinctive_protagonists": "",
+                "bibliography": "Harper 1892-1914; Waterman, RCAE 2, 1930, 334-335 (no. 1204)",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/461/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/40/",
+                    "alternative_name": [],
+                    "name": "(Uruk?)",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 1236",
+                "title": "ABL 1236",
+                "cdli_no": "P237199",
+                "nabucco_no": "",
+                "museum_no": "82-5-22,167",
+                "place_information": "external",
+                "year": 649,
+                "date_not_after": 648,
+                "date_not_before": 652,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The letter dates to the period of the rebellion of Šamaš-šum-ukīn. The year 649 was chosen at random.",
+                "ductus": "",
+                "content": "NN of Uruk to Assurbanipal: developments with the Gurasimmu-tribe in teh context of Šamaš-šum-ukīn's revolt",
+                "distinctive_protagonists": "",
+                "bibliography": "Harper 1892-1914; Waterman, RCAE 2, 1930, 356-359 (no. 1236); cf. Dietrich, Aramäer, 1970, 117-118, 204-205 (obv. 7 - rev. 17, 22); cf. Frame, PIHANS 69, 1992, 178 n. 234",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/448/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 1274",
+                "title": "ABL 1274",
+                "cdli_no": "P237813",
+                "nabucco_no": "",
+                "museum_no": "K 00471",
+                "place_information": "internal",
+                "year": 650,
+                "date_not_after": 648,
+                "date_not_before": 652,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The letter dates to the period of Šamaš-šum-ukīn's revolt. The year 650 was chosen at random.",
+                "ductus": "",
+                "content": "Peopple of Ur to Assurbanipal: desolate state of teh city",
+                "distinctive_protagonists": "",
+                "bibliography": "Frame, PIHANS 69, p.166 and Fn. 164",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/459/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/40/",
+                    "alternative_name": [],
+                    "name": "(Uruk?)",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 1386",
+                "title": "ABL 1386",
+                "cdli_no": "P237544",
+                "nabucco_no": "",
+                "museum_no": "BM 099016",
+                "place_information": "external",
+                "year": 645,
+                "date_not_after": 627,
+                "date_not_before": 668,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The year 645 was chosen at random as it lies towards the mid-point of the possible time range",
+                "ductus": "",
+                "content": "Nabû-ušabši and the Urukeans to Assurbanipal",
+                "distinctive_protagonists": "Nabû-ušabši",
+                "bibliography": "Harper 1892-1914; Waterman, RCAE 2, 1930, 468-469 (no. 1386)",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/460/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 1387",
+                "title": "ABL 1387",
+                "cdli_no": "P237545",
+                "nabucco_no": "",
+                "museum_no": "BM 99018",
+                "place_information": "internal",
+                "year": 651,
+                "date_not_after": 648,
+                "date_not_before": 652,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The letter dates to the revolt of Šamaš-šum-ukīn. The year 651 was chosen at random as it lies towards the mid-point of the possible time range",
+                "ductus": "",
+                "content": "NN of Uruk to Assurbanipal: factional struggle in Uruk, bribe to murder to palace overseer",
+                "distinctive_protagonists": "",
+                "bibliography": "Frame, PIHANS 69, p. 158",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/451/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 266",
+                "title": "ABL 266",
+                "cdli_no": "P237773",
+                "nabucco_no": "",
+                "museum_no": "K 00079",
+                "place_information": "internal",
+                "year": 650,
+                "date_not_after": 653,
+                "date_not_before": 668,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The letter precedes the revolt of Šamaš-šum-ukīn. The year 660 was chosen at random as it lies towards the mid-point of the possible time range",
+                "ductus": "",
+                "content": "Nabû-ušabši of Uruk to Assurbanipal concerning Elamite affairs",
+                "distinctive_protagonists": "Nabû-ušabši",
+                "bibliography": "Frame, PIHANS 69, p. 127",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/410/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 267",
+                "title": "ABL 267",
+                "cdli_no": "P237810",
+                "nabucco_no": "",
+                "museum_no": "K 00462",
+                "place_information": "internal",
+                "year": 651,
+                "date_not_after": 648,
+                "date_not_before": 652,
+                "babyloneian_time": "",
+                "date_comment": "The letter seems to date to the years of the revolt of Šamaš-šum-ukīn. The year 651 was chosen at random.",
+                "ductus": "",
+                "content": "Nabû-ušabši of Uruk to Assurbanipal concerning Elamite affairs",
+                "distinctive_protagonists": "Nabû-ušabši",
+                "bibliography": "Frame, PIHANS 69, p. 167 and Fn. 168",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/480/",
+                "archive": null,
+                "place": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/3/",
+                    "alternative_name": [],
+                    "name": "Uruk",
+                    "geonames_id": "",
+                    "lat": null,
+                    "lng": null
+                },
+                "scribe": null,
+                "period": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/8/",
+                    "name": "EnB"
+                },
+                "text_type": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/15/",
+                    "name": "Letter"
+                },
+                "text_reference": "ABL 269",
+                "title": "ABL 269",
+                "cdli_no": "P393829",
+                "nabucco_no": "",
+                "museum_no": "K 00528",
+                "place_information": "internal",
+                "year": 649,
+                "date_not_after": 627,
+                "date_not_before": 668,
+                "babyloneian_time": "Reign of Assurbanipal",
+                "date_comment": "The year 649 was chosen at random as it lies towards the mid-point of the possible time range",
+                "ductus": "",
+                "content": "Nabû-ušabši of Uruk to Assurbanipal concerning captured enemy troops",
+                "distinctive_protagonists": "Nabû-ušabši",
+                "bibliography": "Harper 1892-1914",
+                "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/2/",
+                "dossier": null
+            }
+        ]
+    },
+    "glyphs": {
+        "count": 13043,
+        "next": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/?limit=10&offset=10",
+        "previous": null,
+        "results": [
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13216/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "34636a07-6ee7-4521-ab20-4dd6d0c5c02a__bhlt-6",
+                "reading": "mut",
+                "context": "[m]Re-mut",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/34636a07-6ee7-4521-ab20-4dd6d0c5c02a__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/205/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13215/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "f2a8bd5b-73a3-40b7-8fae-53ca2bae3bbd__bhlt-6",
+                "reading": "dan",
+                "context": "[x]-ud-dan-na-an",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/f2a8bd5b-73a3-40b7-8fae-53ca2bae3bbd__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/126/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13214/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "07aa20fb-8b4c-489d-8535-fbe9310ff6d1__bhlt-6",
+                "reading": "engar",
+                "context": "TÚ.engar",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/07aa20fb-8b4c-489d-8535-fbe9310ff6d1__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/220/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13213/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "aabe0407-c68a-4883-bedc-bbc9667ab71d__bhlt-6",
+                "reading": "rab",
+                "context": "ta-kar-rab",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/aabe0407-c68a-4883-bedc-bbc9667ab71d__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/94/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13212/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "ac17e084-b98b-4f2c-8122-377ac577ddb8__bhlt-6",
+                "reading": "ṣir",
+                "context": "mi-ṣir",
+                "note": "broken",
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/ac17e084-b98b-4f2c-8122-377ac577ddb8__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/48/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13211/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "492d1cc1-3f79-41a9-aa9b-7422ab61db66__bhlt-6",
+                "reading": "mi",
+                "context": "mi-ṣir",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/492d1cc1-3f79-41a9-aa9b-7422ab61db66__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/188/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13210/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "dd2f838b-d10f-4e2d-bbf3-6920fa600b19__bhlt-6",
+                "reading": "ab",
+                "context": "ba-ab",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/dd2f838b-d10f-4e2d-bbf3-6920fa600b19__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/150/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13209/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "4a95b0b4-d2d9-4dcf-8f34-d1f8e356d22b__bhlt-6",
+                "reading": "bir",
+                "context": "URU.bir-tú",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/4a95b0b4-d2d9-4dcf-8f34-d1f8e356d22b__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/145/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13207/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "0629bc5c-dae2-4e93-9363-ad01f73cb099__bhlt-6",
+                "reading": "ḫu",
+                "context": "URU.Ḫu-da-da",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/0629bc5c-dae2-4e93-9363-ad01f73cb099__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/170/"
+            },
+            {
+                "url": "http://labasi.acdh.oeaw.ac.at/data/api/glyphs/13206/",
+                "tablet": {
+                    "url": "http://labasi.acdh.oeaw.ac.at/data/api/tablets/682/",
+                    "archive": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/archives/5/",
+                        "name": "Esangila"
+                    },
+                    "place": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/places/6/",
+                        "alternative_name": [],
+                        "name": "Babylon",
+                        "geonames_id": "",
+                        "lat": null,
+                        "lng": null
+                    },
+                    "scribe": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/scribes/6/",
+                        "name": "n/a"
+                    },
+                    "period": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/periods/2/",
+                        "name": "Ach"
+                    },
+                    "text_type": {
+                        "url": "http://labasi.acdh.oeaw.ac.at/data/api/texttypes/41/",
+                        "name": "Historical-literary"
+                    },
+                    "text_reference": "BHLT 6",
+                    "title": "BHLT 6",
+                    "cdli_no": "",
+                    "nabucco_no": "",
+                    "museum_no": "BM 34104",
+                    "place_information": "external",
+                    "year": null,
+                    "date_not_after": 1,
+                    "date_not_before": 413,
+                    "babyloneian_time": "",
+                    "date_comment": "Probably late Achaemenid.",
+                    "ductus": "normal",
+                    "content": "",
+                    "distinctive_protagonists": "",
+                    "bibliography": "",
+                    "region": "http://labasi.acdh.oeaw.ac.at/data/api/regions/5/",
+                    "dossier": "http://labasi.acdh.oeaw.ac.at/data/api/dossiers/6/"
+                },
+                "identifier": "9dd0c689-f9b9-4883-afaa-51a9168bb4ee__bhlt-6",
+                "reading": "pan",
+                "context": "sa-pan-na",
+                "note": null,
+                "image": "http://labasi.acdh.oeaw.ac.at/media/glyph_img/9dd0c689-f9b9-4883-afaa-51a9168bb4ee__bhlt-6.png",
+                "sign": "http://labasi.acdh.oeaw.ac.at/data/api/signs/22/"
+            }
+        ]
+    }
+}
