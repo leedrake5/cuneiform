@@ -1134,7 +1134,7 @@ except NameError as e:
     print("An error occurred:", str(e))
 print("Generating Test Akkadian cuneiform simple from transliterations")
 try:
-    akk_test_rev_pairs_transliterate_simple_results = translate_cuneiform_set(akk_testrev_pairs_transliterate_simple, 'test', 'akk_test_rev_pairs_transliterate_simple')
+    akk_test_rev_pairs_transliterate_simple_results = translate_cuneiform_set(akk_test_rev_pairs_transliterate_simple, 'test', 'akk_test_rev_pairs_transliterate_simple')
 except NameError as e:
     print("An error occurred:", str(e))
 
