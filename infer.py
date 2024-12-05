@@ -247,251 +247,6 @@ def trim_pairs(pairs, max_length1, max_length2, max_length_threshold, min_length
     ]
     return trimmed_pairs
 
-
-def readLangs(max_length_akk=5000, max_length_en=5000, max_length_threshold=100, min_length_threshold=50, debug=False):
-    print("Reading lines...")
-    ##############
-    ###Akkadian###
-    ##############
-    # Read the file and split into lines
-    akk_cuneiform_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_train.cu'))
-    akk_transcription_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_train.tr'))
-    akk_en_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_train.en'))
-    akk_cuneiform_test = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_test.cu'))
-    akk_transcription_test = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_test.tr'))
-    akk_en_test = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_test.en'))
-    akk_cuneiform_val = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_valid.cu'))
-    akk_transcription_val = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_valid.tr'))
-    akk_en_val = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'a_valid.en'))
-    # Split every line into pairs and normalize
-    ###Translate from Akkadian cuneiform to English
-    akk_train_pairs_cuneiform_translate = [[normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=True, task="Translate", language="Akkadian"), normalizeString_en(akk_en_train[l], use_prefix=False)] for l in range(len(akk_cuneiform_train))]
-    akk_test_pairs_cuneiform_translate = [[normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=True, task="Translate", language="Akkadian"), normalizeString_en(akk_en_test[l], use_prefix=False)] for l in range(len(akk_cuneiform_test))]
-    akk_val_pairs_cuneiform_translate = [[normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=True, task="Translate", language="Akkadian"), normalizeString_en(akk_en_val[l], use_prefix=False)] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_cuneiform_translate[1][0]}, " -> ", {akk_train_pairs_cuneiform_translate[1][1]})
-    ###Translate from simple transliterated Akkadian to English
-    akk_train_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_train[l], use_prefix=True, task="Translate", type="simple", language="Akkadian"), normalizeString_en(akk_en_train[l], use_prefix=False)] for l in range(len(akk_transcription_train))]
-    akk_test_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_test[l], use_prefix=True, task="Translate", type="simple", language="Akkadian"), normalizeString_en(akk_en_test[l], use_prefix=False)] for l in range(len(akk_transcription_test))]
-    akk_val_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_val[l], use_prefix=True, task="Translate", type="simple", language="Akkadian"), normalizeString_en(akk_en_val[l], use_prefix=False)] for l in range(len(akk_transcription_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_simple_transliterated_translate[1][0]}, " -> ", {akk_train_pairs_simple_transliterated_translate[1][1]})
-    ###Translate from origional transliterated Akkadian to English
-    akk_train_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_train[l], use_prefix=True, task="Translate", type="origional", language="Akkadian"), normalizeString_en(akk_en_train[l], use_prefix=False)] for l in range(len(akk_transcription_train))]
-    akk_test_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_test[l], use_prefix=True, task="Translate", type="origional", language="Akkadian"), normalizeString_en(akk_en_test[l], use_prefix=False)] for l in range(len(akk_transcription_test))]
-    akk_val_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_val[l], use_prefix=True, task="Translate", type="origional", language="Akkadian"), normalizeString_en(akk_en_val[l], use_prefix=False)] for l in range(len(akk_transcription_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_origional_transliterated_translate[1][0]}, " -> ", {akk_train_pairs_origional_transliterated_translate[1][1]})
-    ###Translate from grouped transliterated Akkadian to English
-    akk_train_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(akk_transcription_train[l], use_prefix=True, language="Akkadian"), normalizeString_en(akk_en_train[l], use_prefix=False)] for l in range(len(akk_transcription_train))]
-    akk_test_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(akk_transcription_test[l], use_prefix=True, language="Akkadian"), normalizeString_en(akk_en_test[l], use_prefix=False)] for l in range(len(akk_transcription_test))]
-    akk_val_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(akk_transcription_val[l], use_prefix=True, language="Akkadian"), normalizeString_en(akk_en_val[l], use_prefix=False)] for l in range(len(akk_transcription_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_group_transliterated_translate[1][0]}, " -> ", {akk_train_pairs_group_transliterated_translate[1][1]})
-    ###Transliterate from Akkadian Cuenfirom to simple Latin characters
-    akk_train_pairs_transliterate_simple = [[normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=True, task="Transliterate", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_train[l], use_prefix=False)] for l in range(len(akk_cuneiform_train))]
-    akk_test_pairs_transliterate_simple = [[normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=True, task="Transliterate", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_test[l], use_prefix=False)] for l in range(len(akk_cuneiform_test))]
-    akk_val_pairs_transliterated_simple = [[normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=True, task="Transliterate", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_val[l], use_prefix=False)] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_transliterate_simple[1][0]}, " -> ", {akk_train_pairs_transliterate_simple[1][1]})
-    ###Transliterate from Akkadian Cuenfirom to complex Latin characters
-    akk_train_pairs_transliterate_origional = [[normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=True, task="Transliterate", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_train[l], use_prefix=False, type="origional")] for l in range(len(akk_cuneiform_train))]
-    akk_test_pairs_transliterate_origional = [[normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=True, task="Transliterate", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_test[l], use_prefix=False, type="origional")] for l in range(len(akk_cuneiform_test))]
-    akk_val_pairs_transliterated_origional = [[normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=True, task="Transliterate", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_val[l], use_prefix=False, type="origional")] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_transliterate_origional[1][0]}, " -> ", {akk_train_pairs_transliterate_origional[1][1]})
-    ###Transliterate from Akkadian Cuenfirom to grouped Latin characters
-    akk_train_pairs_transliterate_group = [[normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=True, task="Transliterate", type="group", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_train[l], use_prefix=False, type="group")] for l in range(len(akk_cuneiform_train))]
-    akk_test_pairs_transliterate_group = [[normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=True, task="Transliterate", type="group", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_test[l], use_prefix=False, type="group")] for l in range(len(akk_cuneiform_test))]
-    akk_val_pairs_transliterated_group = [[normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=True, task="Transliterate", type="group", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_val[l], use_prefix=False, type="group")] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_transliterate_group[1][0]}, " -> ", {akk_train_pairs_transliterate_group[1][1]})
-    ###Group simple transliterated Akkadian into words
-    akk_train_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_train[l], use_prefix=True, task="Group", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_train[l], use_prefix=False)] for l in range(len(akk_cuneiform_train))]
-    akk_test_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_test[l], use_prefix=True, task="Group", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_test[l], use_prefix=False)] for l in range(len(akk_cuneiform_test))]
-    akk_val_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_val[l], use_prefix=True, task="Group", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_val[l], use_prefix=False)] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_group_simple_transliterate[1][0]}, " -> ", {akk_train_pairs_group_simple_transliterate[1][1]})
-    ###Group complex transliterated Akkadian into words
-    akk_train_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_train[l], use_prefix=True, task="Group", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_train[l], use_prefix=False)] for l in range(len(akk_cuneiform_train))]
-    akk_test_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_test[l], use_prefix=True, task="Group", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_test[l], use_prefix=False)] for l in range(len(akk_cuneiform_test))]
-    akk_val_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(akk_transcription_val[l], use_prefix=True, task="Group", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_val[l], use_prefix=False)] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_pairs_group_origional_transliterate[1][0]}, " -> ", {akk_train_pairs_group_origional_transliterate[1][1]})
-    ###Translate from English to cuneiform Akkadian
-    akk_train_rev_pairs_cuneiform_translate = [[normalizeString_en(akk_en_train[l], use_prefix=True, task="Translate", target="cuneiform", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=False)] for l in range(len(akk_cuneiform_train))]
-    akk_test_rev_pairs_cuneiform_translate = [[normalizeString_en(akk_en_test[l], use_prefix=True, task="Translate", target="cuneiform", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=False)] for l in range(len(akk_cuneiform_test))]
-    akk_val_rev_pairs_cuneiform_translate = [[normalizeString_en(akk_en_val[l], use_prefix=True, task="Translate", target="cuneiform", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=False), ] for l in range(len(akk_cuneiform_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_cuneiform_translate[1][0]}, " -> ", {akk_train_rev_pairs_cuneiform_translate[1][1]})
-    ###Translate from English to simple transliterated Akkadian
-    akk_train_rev_pairs_simple_transliterated_translate = [[normalizeString_en(akk_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_train[l], use_prefix=False, type="simple")] for l in range(len(akk_en_train))]
-    akk_test_rev_pairs_simple_transliterated_translate = [[normalizeString_en(akk_en_test[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_test[l], use_prefix=False, type="simple")] for l in range(len(akk_en_test))]
-    akk_val_rev_pairs_simple_transliterated_translate = [[normalizeString_en(akk_en_val[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_val[l], use_prefix=False, type="simple")] for l in range(len(akk_en_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_simple_transliterated_translate[1][0]}, " -> ", {akk_train_rev_pairs_simple_transliterated_translate[1][1]})
-    ###Translate from English to complex transliterated Akkadian
-    akk_train_rev_pairs_origional_transliterated_translate = [[normalizeString_en(akk_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_train[l], use_prefix=False, type="origional")] for l in range(len(akk_en_train))]
-    akk_test_rev_pairs_origional_transliterated_translate = [[normalizeString_en(akk_en_test[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_test[l], use_prefix=False, type="origional")] for l in range(len(akk_en_test))]
-    akk_val_rev_pairs_origional_transliterated_translate = [[normalizeString_en(akk_en_val[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Akkadian"), normalizeString_cuneiform_transliterate(akk_transcription_val[l], use_prefix=False, type="origional")] for l in range(len(akk_en_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_origional_transliterated_translate[1][0]}, " -> ", {akk_train_rev_pairs_origional_transliterated_translate[1][1]})
-    ###Translate from English to grouped transliterated Akkadian
-    akk_train_rev_pairs_group_transliterated_translate = [[normalizeString_en(akk_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_train[l], use_prefix=False)] for l in range(len(akk_en_train))]
-    akk_test_rev_pairs_group_transliterated_translate = [[normalizeString_en(akk_en_test[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_test[l], use_prefix=False)] for l in range(len(akk_en_test))]
-    akk_val_rev_pairs_group_transliterated_translate = [[normalizeString_en(akk_en_val[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Akkadian"), normalizeString_cuneiform_transliterate_minimal(akk_transcription_val[l], use_prefix=False)] for l in range(len(akk_en_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_group_transliterated_translate[1][0]}, " -> ", {akk_train_rev_pairs_group_transliterated_translate[1][1]})
-    ###Convert from simple transliterated Akkadian to cuneiform
-    akk_train_rev_pairs_transliterate_simple = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_train[l], use_prefix=True, type="simple", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=False)] for l in range(len(akk_transcription_train))]
-    akk_test_rev_pairs_transliterate_simple = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_test[l], use_prefix=True, type="simple", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=False)] for l in range(len(akk_transcription_test))]
-    akk_val_rev_pairs_transliterate_simple = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_val[l], use_prefix=True, type="simple", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=False)] for l in range(len(akk_transcription_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_transliterate_simple[1][0]}, " -> ", {akk_train_rev_pairs_transliterate_simple[1][1]})
-    ###Convert from grouped transliterated Akkadian to cuneiform
-    akk_train_rev_pairs_transliterate_group = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_train[l], use_prefix=True, type="group", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=False)] for l in range(len(akk_transcription_train))]
-    akk_test_rev_pairs_transliterate_group = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_test[l], use_prefix=True, type="group", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=False)] for l in range(len(akk_transcription_test))]
-    akk_val_rev_pairs_transliterate_group = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_val[l], use_prefix=True, type="group", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=False)] for l in range(len(akk_transcription_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_transliterate_group[1][0]}, " -> ", {akk_train_rev_pairs_transliterate_group[1][1]})
-    ###Convert from complex transliterated Akkadian to cuneiform
-    akk_train_rev_pairs_transliterate_origional = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_train[l], use_prefix=True, type="origional", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_train[l], use_prefix=False)] for l in range(len(akk_transcription_train))]
-    akk_test_rev_pairs_transliterate_origional = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_test[l], use_prefix=True, type="origional", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_test[l], use_prefix=False)] for l in range(len(akk_transcription_test))]
-    akk_val_rev_pairs_transliterate_origional = [[normalizeString_cuneiform_rev_transliterate(akk_transcription_val[l], use_prefix=True, type="origional", language="Akkadian"), normalizeString_cuneiform(akk_cuneiform_val[l], use_prefix=False)] for l in range(len(akk_transcription_val))]
-    if debug == True:
-        print(f"", {akk_train_rev_pairs_transliterate_origional[1][0]}, " -> ", {akk_train_rev_pairs_transliterate_origional[1][1]})
-    ##############
-    ###Sumerian###
-    ##############
-    # Read the file and split into lines
-    sux_transcription_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 's_train.tr'))
-    sux_en_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 's_train.en'))
-    sux_transcription_test = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 's_test.tr'))
-    sux_en_test = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 's_test.en'))
-    sux_transcription_val = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 's_valid.tr'))
-    sux_en_val = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 's_valid.en'))
-    # Split every line into pairs and normalize
-    ##Translate from simple transliterated Sumerian to English
-    sux_train_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_train[l], use_prefix=True, task="Translate", type="simple", language="Sumerian"), normalizeString_en(sux_en_train[l], use_prefix=False)] for l in range(len(sux_transcription_train))]
-    sux_test_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_test[l], use_prefix=True, task="Translate", type="simple", language="Sumerian"), normalizeString_en(sux_en_test[l], use_prefix=False)] for l in range(len(sux_transcription_test))]
-    sux_val_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_val[l], use_prefix=True, task="Translate", type="simple", language="Sumerian"), normalizeString_en(sux_en_val[l], use_prefix=False)] for l in range(len(sux_transcription_val))]
-    if debug == True:
-        print(f"", {sux_train_pairs_simple_transliterated_translate[1][0]}, " -> ", {sux_train_pairs_simple_transliterated_translate[1][1]})
-    ###Translate from origional transliterated Sumerian to English
-    sux_train_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_train[l], use_prefix=True, task="Translate", type="origional", language="Sumerian"), normalizeString_en(sux_en_train[l], use_prefix=False)] for l in range(len(sux_transcription_train))]
-    sux_test_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_test[l], use_prefix=True, task="Translate", type="origional", language="Sumerian"), normalizeString_en(sux_en_test[l], use_prefix=False)] for l in range(len(sux_transcription_test))]
-    sux_val_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_val[l], use_prefix=True, task="Translate", type="origional", language="Sumerian"), normalizeString_en(sux_en_val[l], use_prefix=False)] for l in range(len(sux_transcription_val))]
-    if debug == True:
-        print(f"", {sux_train_pairs_origional_transliterated_translate[1][0]}, " -> ", {sux_train_pairs_origional_transliterated_translate[1][1]})
-    ###Translate from grouped transliterated Sumerian to English
-    sux_train_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(sux_transcription_train[l], use_prefix=True, language="Sumerian"), normalizeString_en(sux_en_train[l], use_prefix=False)] for l in range(len(sux_transcription_train))]
-    sux_test_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(sux_transcription_test[l], use_prefix=True, language="Sumerian"), normalizeString_en(sux_en_test[l], use_prefix=False)] for l in range(len(sux_transcription_test))]
-    sux_val_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(sux_transcription_val[l], use_prefix=True, language="Sumerian"), normalizeString_en(sux_en_val[l], use_prefix=False)] for l in range(len(sux_transcription_val))]
-    if debug == True:
-        print(f"", {sux_train_pairs_group_transliterated_translate[1][0]}, " -> ", {sux_train_pairs_group_transliterated_translate[1][1]})
-    ###Group simple transliterated Sumerian into words
-    sux_train_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_train[l], use_prefix=True, task="Group", type="simple", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_train[l], use_prefix=False)] for l in range(len(sux_transcription_train))]
-    sux_test_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_test[l], use_prefix=True, task="Group", type="simple", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_test[l], use_prefix=False)] for l in range(len(sux_transcription_test))]
-    sux_val_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_val[l], use_prefix=True, task="Group", type="simple", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_val[l], use_prefix=False)] for l in range(len(sux_transcription_val))]
-    if debug == True:
-        print(f"", {sux_train_pairs_group_simple_transliterate[1][0]}, " -> ", {sux_train_pairs_group_simple_transliterate[1][1]})
-    ###Group complex transliterated Sumerian into words
-    sux_train_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_train[l], use_prefix=True, task="Group", type="origional", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_train[l], use_prefix=False)] for l in range(len(sux_transcription_train))]
-    sux_test_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_test[l], use_prefix=True, task="Group", type="origional", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_test[l], use_prefix=False)] for l in range(len(sux_transcription_test))]
-    sux_val_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(sux_transcription_val[l], use_prefix=True, task="Group", type="origional", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_val[l], use_prefix=False)] for l in range(len(sux_transcription_val))]
-    if debug == True:
-        print(f"", {sux_train_pairs_group_origional_transliterate[1][0]}, " -> ", {sux_train_pairs_group_origional_transliterate[1][1]})
-    ###Translate from English to simple transliterated Sumerian
-    sux_train_rev_pairs_simple_transliterated_translate = [[normalizeString_en(sux_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Sumerian"), normalizeString_cuneiform_transliterate(sux_transcription_train[l], use_prefix=False, type="simple")] for l in range(len(sux_en_train))]
-    sux_test_rev_pairs_simple_transliterated_translate = [[normalizeString_en(sux_en_test[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Sumerian"), normalizeString_cuneiform_transliterate(sux_transcription_test[l], use_prefix=False, type="simple")] for l in range(len(sux_en_test))]
-    sux_val_rev_pairs_simple_transliterated_translate = [[normalizeString_en(sux_en_val[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Sumerian"), normalizeString_cuneiform_transliterate(sux_transcription_val[l], use_prefix=False, type="simple")] for l in range(len(sux_en_val))]
-    if debug == True:
-        print(f"", {sux_train_rev_pairs_simple_transliterated_translate[1][0]}, " -> ", {sux_train_rev_pairs_simple_transliterated_translate[1][1]})
-    ###Translate from English to complex transliterated Sumerian
-    sux_train_rev_pairs_origional_transliterated_translate = [[normalizeString_en(sux_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Sumerian"), normalizeString_cuneiform_transliterate(sux_transcription_train[l], use_prefix=False, type="origional")] for l in range(len(sux_en_train))]
-    sux_test_rev_pairs_origional_transliterated_translate = [[normalizeString_en(sux_en_test[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Sumerian"), normalizeString_cuneiform_transliterate(sux_transcription_test[l], use_prefix=False, type="origional")] for l in range(len(sux_en_test))]
-    sux_val_rev_pairs_origional_transliterated_translate = [[normalizeString_en(sux_en_val[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Sumerian"), normalizeString_cuneiform_transliterate(sux_transcription_val[l], use_prefix=False, type="origional")] for l in range(len(sux_en_val))]
-    if debug == True:
-        print(f"", {sux_train_rev_pairs_origional_transliterated_translate[1][0]}, " -> ", {sux_train_rev_pairs_origional_transliterated_translate[1][1]})
-    ###Translate from English to grouped transliterated Sumerian
-    sux_train_rev_pairs_group_transliterated_translate = [[normalizeString_en(sux_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_train[l], use_prefix=False)] for l in range(len(sux_en_train))]
-    sux_test_rev_pairs_group_transliterated_translate = [[normalizeString_en(sux_en_test[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_test[l], use_prefix=False)] for l in range(len(sux_en_test))]
-    sux_val_rev_pairs_group_transliterated_translate = [[normalizeString_en(sux_en_val[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Sumerian"), normalizeString_cuneiform_transliterate_minimal(sux_transcription_val[l], use_prefix=False)] for l in range(len(sux_en_val))]
-    if debug == True:
-        print(f"", {sux_train_rev_pairs_group_transliterated_translate[1][0]}, " -> ", {sux_train_rev_pairs_group_transliterated_translate[1][1]})
-    ###############
-    ###Elamite###
-    ###############
-    # Read the file and split into lines
-    elx_transcription_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'e_train.tr'))
-    elx_en_train = read_and_process_file(os.path.join(user_directory, 'GitHub', 'cuneiform', 'data', 'e_train.en'))
-    # Split every line into pairs and normalize
-    ##Translate from simple transliterated Elamite to English
-    elx_train_pairs_simple_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(elx_transcription_train[l], use_prefix=True, task="Translate", type="simple", language="Elamite"), normalizeString_en(elx_en_train[l], use_prefix=False)] for l in range(len(elx_transcription_train))]
-    if debug == True:
-        print(f"", {elx_train_pairs_simple_transliterated_translate[1][0]}, " -> ", {elx_train_pairs_simple_transliterated_translate[1][1]})
-    ###Translate from origional transliterated Elamite to English
-    elx_train_pairs_origional_transliterated_translate = [[normalizeString_cuneiform_transliterate_translate(elx_transcription_train[l], use_prefix=True, task="Translate", type="origional", language="Elamite"), normalizeString_en(elx_en_train[l], use_prefix=False)] for l in range(len(elx_transcription_train))]
-    if debug == True:
-        print(f"", {elx_train_pairs_origional_transliterated_translate[1][0]}, " -> ", {elx_train_pairs_origional_transliterated_translate[1][1]})
-    ###Translate from grouped transliterated Elamite to English
-    elx_train_pairs_group_transliterated_translate = [[normalizeString_cuneiform_transliterate_minimal(elx_transcription_train[l], use_prefix=True, language="Elamite"), normalizeString_en(elx_en_train[l], use_prefix=False)] for l in range(len(elx_transcription_train))]
-    if debug == True:
-       print(f"", {elx_train_pairs_group_transliterated_translate[1][0]}, " -> ", {elx_train_pairs_group_transliterated_translate[1][1]})
-    ###Group simple transliterated Elamite into words
-    elx_train_pairs_group_simple_transliterate = [[normalizeString_cuneiform_transliterate_translate(elx_transcription_train[l], use_prefix=True, task="Group", type="simple", language="Elamite"), normalizeString_cuneiform_transliterate_minimal(elx_transcription_train[l], use_prefix=False)] for l in range(len(elx_transcription_train))]
-    if debug == True:
-        print(f"", {elx_train_pairs_group_simple_transliterate[1][0]}, " -> ", {elx_train_pairs_group_simple_transliterate[1][1]})
-    ###Group complex transliterated Elamite into words
-    elx_train_pairs_group_origional_transliterate = [[normalizeString_cuneiform_transliterate_translate(elx_transcription_train[l], use_prefix=True, task="Group", type="origional", language="Elamite"), normalizeString_cuneiform_transliterate_minimal(elx_transcription_train[l], use_prefix=False)] for l in range(len(elx_transcription_train))]
-    if debug == True:
-        print(f"", {elx_train_pairs_group_origional_transliterate[1][0]}, " -> ", {elx_train_pairs_group_origional_transliterate[1][1]})
-    ###Translate from English to simple transliterated Elamite
-    elx_train_rev_pairs_simple_transliterated_translate = [[normalizeString_en(elx_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="simple", language="Elamite"), normalizeString_cuneiform_transliterate(elx_transcription_train[l], use_prefix=False, type="simple")] for l in range(len(elx_en_train))]
-    if debug == True:
-        print(f"", {elx_train_rev_pairs_simple_transliterated_translate[1][0]}, " -> ", {elx_train_rev_pairs_simple_transliterated_translate[1][1]})
-    ###Translate from English to complex transliterated Elamite
-    elx_train_rev_pairs_origional_transliterated_translate = [[normalizeString_en(elx_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="origional", language="Elamite"), normalizeString_cuneiform_transliterate(elx_transcription_train[l], use_prefix=False, type="origional")] for l in range(len(elx_en_train))]
-    if debug == True:
-        print(f"", {elx_train_rev_pairs_origional_transliterated_translate[1][0]}, " -> ", {elx_train_rev_pairs_origional_transliterated_translate[1][1]})
-    ###Translate from English to grouped transliterated Elamite
-    elx_train_rev_pairs_group_transliterated_translate = [[normalizeString_en(elx_en_train[l], use_prefix=True, task="Translate", target="transliteration", type="group", language="Elamite"), normalizeString_cuneiform_transliterate_minimal(elx_transcription_train[l], use_prefix=False)] for l in range(len(elx_en_train))]
-    if debug == True:
-        print(f"", {elx_train_rev_pairs_group_transliterated_translate[1][0]}, " -> ", {elx_train_rev_pairs_group_transliterated_translate[1][1]})
-    ###Merge all data sets
-    train_pairs = akk_train_pairs_cuneiform_translate + akk_train_pairs_simple_transliterated_translate + akk_train_pairs_origional_transliterated_translate + akk_train_pairs_group_transliterated_translate + akk_train_pairs_transliterate_simple + akk_train_pairs_transliterate_origional + akk_train_pairs_transliterate_group + akk_train_pairs_group_simple_transliterate + akk_train_pairs_group_origional_transliterate + akk_train_rev_pairs_cuneiform_translate + akk_train_rev_pairs_simple_transliterated_translate + akk_train_rev_pairs_origional_transliterated_translate + akk_train_rev_pairs_group_transliterated_translate + akk_train_rev_pairs_transliterate_simple + akk_train_rev_pairs_transliterate_group + akk_train_rev_pairs_transliterate_origional + sux_train_pairs_simple_transliterated_translate + sux_train_pairs_origional_transliterated_translate + sux_train_pairs_group_transliterated_translate + sux_train_pairs_group_simple_transliterate + sux_train_rev_pairs_simple_transliterated_translate + sux_train_rev_pairs_origional_transliterated_translate + sux_train_rev_pairs_group_transliterated_translate + elx_train_pairs_simple_transliterated_translate + elx_train_pairs_origional_transliterated_translate + elx_train_pairs_group_transliterated_translate + elx_train_pairs_group_simple_transliterate + elx_train_rev_pairs_simple_transliterated_translate + elx_train_rev_pairs_origional_transliterated_translate + elx_train_rev_pairs_group_transliterated_translate
-    test_pairs = akk_test_pairs_cuneiform_translate + akk_test_pairs_simple_transliterated_translate + akk_test_pairs_origional_transliterated_translate + akk_test_pairs_group_transliterated_translate + akk_test_pairs_transliterate_simple + akk_test_pairs_transliterate_origional + akk_test_pairs_transliterate_group + akk_test_pairs_group_simple_transliterate + akk_test_pairs_group_origional_transliterate + akk_test_rev_pairs_cuneiform_translate + akk_test_rev_pairs_simple_transliterated_translate + akk_test_rev_pairs_origional_transliterated_translate + akk_test_rev_pairs_group_transliterated_translate + akk_test_rev_pairs_transliterate_simple + akk_test_rev_pairs_transliterate_group + akk_test_rev_pairs_transliterate_origional + sux_test_pairs_simple_transliterated_translate + sux_test_pairs_origional_transliterated_translate + sux_test_pairs_group_transliterated_translate + sux_test_pairs_group_simple_transliterate + sux_test_rev_pairs_simple_transliterated_translate + sux_test_rev_pairs_origional_transliterated_translate + sux_test_rev_pairs_group_transliterated_translate
-    val_pairs = akk_val_pairs_cuneiform_translate + akk_val_pairs_simple_transliterated_translate + akk_val_pairs_origional_transliterated_translate + akk_val_pairs_group_transliterated_translate + akk_val_pairs_transliterated_simple + akk_val_pairs_transliterated_origional + akk_val_pairs_transliterated_group + akk_val_pairs_group_simple_transliterate + akk_val_pairs_group_origional_transliterate + akk_val_rev_pairs_cuneiform_translate + akk_val_rev_pairs_simple_transliterated_translate + akk_val_rev_pairs_origional_transliterated_translate + akk_val_rev_pairs_group_transliterated_translate + akk_val_rev_pairs_transliterate_simple + akk_val_rev_pairs_transliterate_group + akk_val_rev_pairs_transliterate_origional + sux_val_pairs_simple_transliterated_translate + sux_val_pairs_origional_transliterated_translate + sux_val_pairs_group_transliterated_translate + sux_val_pairs_group_simple_transliterate + sux_val_rev_pairs_simple_transliterated_translate + sux_val_rev_pairs_origional_transliterated_translate + sux_val_rev_pairs_group_transliterated_translate
-    pairs = train_pairs + test_pairs + val_pairs
-    #print("Examples:")
-    #print(f"", {train_pairs_cuneiform_translate[1][0]}, " -> ", {train_pairs_cuneiform_translate[1][1]})
-    #print(f"", {train_pairs_transliterate_origional[1][0]}, " -> ", {train_pairs_transliterate_origional[1][1]})
-    #print(f"", {train_pairs_transliterate_group[1][0]}, " -> ", {train_pairs_transliterate_group[1][1]})
-    #print(f"", {train_pairs_group_transliterated_translate[1][0]}, " -> ", {train_pairs_group_transliterated_translate[1][1]})
-    print(f"Total pairs imported: {len(pairs)}")
-    train_pairs = trim_pairs(train_pairs, max_length_akk, max_length_en, max_length_threshold, min_length_threshold)
-    if debug == True:
-        print("training set trimmed")
-    val_pairs = trim_pairs(val_pairs, max_length_akk, max_length_en, max_length_threshold, min_length_threshold)
-    if debug == True:
-        print("val set trimmed")
-    test_pairs = trim_pairs(test_pairs, max_length_akk, max_length_en, max_length_threshold, min_length_threshold)
-    if debug == True:
-        print("test set trimmed")
-    pairs = train_pairs + test_pairs + val_pairs
-    print(f"Total pairs filtered: {len(pairs)}")
-    max_length_pair_0 = max(pairs, key=lambda pair: len(pair[0].split()))
-    max_length_pair_1 = max(pairs, key=lambda pair: len(pair[1].split()))
-    print("Largest number of words in pair[0]:")
-    print(f"Word Count: {len(max_length_pair_0[0].split())}, Content: {max_length_pair_0[0]}")
-    print("Largest number of words in pair[1]:")
-    print(f"Word Count: {len(max_length_pair_1[1].split())}, Content: {max_length_pair_1[1]}")
-    mean_length_pair_0 = sum(len(pair[0].split()) for pair in pairs) / len(pairs)
-    mean_length_pair_1 = sum(len(pair[1].split()) for pair in pairs) / len(pairs)
-    print(f"Mean number of tokens in Akkadian: {mean_length_pair_0:.2f}")
-    print(f"Mean number of tokens in English: {mean_length_pair_1:.2f}")
-    return train_pairs, val_pairs, test_pairs, pairs, akk_train_pairs_cuneiform_translate , akk_train_pairs_simple_transliterated_translate , akk_train_pairs_origional_transliterated_translate , akk_train_pairs_group_transliterated_translate , akk_train_pairs_transliterate_simple , akk_train_pairs_transliterate_origional , akk_train_pairs_transliterate_group , akk_train_pairs_group_simple_transliterate , akk_train_pairs_group_origional_transliterate , akk_train_rev_pairs_cuneiform_translate , akk_train_rev_pairs_simple_transliterated_translate , akk_train_rev_pairs_origional_transliterated_translate , akk_train_rev_pairs_group_transliterated_translate , akk_train_rev_pairs_transliterate_simple , akk_train_rev_pairs_transliterate_group , akk_train_rev_pairs_transliterate_origional , sux_train_pairs_simple_transliterated_translate , sux_train_pairs_origional_transliterated_translate , sux_train_pairs_group_transliterated_translate , sux_train_pairs_group_simple_transliterate , sux_train_rev_pairs_simple_transliterated_translate , sux_train_rev_pairs_origional_transliterated_translate , sux_train_rev_pairs_group_transliterated_translate , elx_train_pairs_simple_transliterated_translate , elx_train_pairs_origional_transliterated_translate , elx_train_pairs_group_transliterated_translate , elx_train_pairs_group_simple_transliterate , elx_train_rev_pairs_simple_transliterated_translate , elx_train_rev_pairs_origional_transliterated_translate , elx_train_rev_pairs_group_transliterated_translate , akk_test_pairs_cuneiform_translate , akk_test_pairs_simple_transliterated_translate , akk_test_pairs_origional_transliterated_translate , akk_test_pairs_group_transliterated_translate , akk_test_pairs_transliterate_simple , akk_test_pairs_transliterate_origional , akk_test_pairs_transliterate_group , akk_test_pairs_group_simple_transliterate , akk_test_pairs_group_origional_transliterate , akk_test_rev_pairs_cuneiform_translate , akk_test_rev_pairs_simple_transliterated_translate , akk_test_rev_pairs_origional_transliterated_translate , akk_test_rev_pairs_group_transliterated_translate , akk_test_rev_pairs_transliterate_simple , akk_test_rev_pairs_transliterate_group , akk_test_rev_pairs_transliterate_origional , sux_test_pairs_simple_transliterated_translate , sux_test_pairs_origional_transliterated_translate , sux_test_pairs_group_transliterated_translate , sux_test_pairs_group_simple_transliterate , sux_test_rev_pairs_simple_transliterated_translate , sux_test_rev_pairs_origional_transliterated_translate , sux_test_rev_pairs_group_transliterated_translate , akk_val_pairs_cuneiform_translate , akk_val_pairs_simple_transliterated_translate , akk_val_pairs_origional_transliterated_translate , akk_val_pairs_group_transliterated_translate , akk_val_pairs_transliterated_simple , akk_val_pairs_transliterated_origional , akk_val_pairs_transliterated_group , akk_val_pairs_group_simple_transliterate , akk_val_pairs_group_origional_transliterate , akk_val_rev_pairs_cuneiform_translate , akk_val_rev_pairs_simple_transliterated_translate , akk_val_rev_pairs_origional_transliterated_translate , akk_val_rev_pairs_group_transliterated_translate , akk_val_rev_pairs_transliterate_simple , akk_val_rev_pairs_transliterate_group , akk_val_rev_pairs_transliterate_origional , sux_val_pairs_simple_transliterated_translate , sux_val_pairs_origional_transliterated_translate , sux_val_pairs_group_transliterated_translate , sux_val_pairs_group_simple_transliterate , sux_val_rev_pairs_simple_transliterated_translate , sux_val_rev_pairs_origional_transliterated_translate , sux_val_rev_pairs_group_transliterated_translate
-
 def readLangsUnknown(max_length_akk=5000, max_length_en=5000, max_length_threshold=100, min_length_threshold=50, debug=False):
     print("Reading lines...")
     ##############
@@ -551,42 +306,15 @@ def readLangsUnknown(max_length_akk=5000, max_length_en=5000, max_length_thresho
     ###Return
     return akk_u_pairs_simple_transliterated_translate, akk_u_pairs_origional_transliterated_translate, akk_u_pairs_group_transliterated_translate, sux_u_pairs_simple_transliterated_translate, sux_u_pairs_origional_transliterated_translate, sux_u_pairs_group_transliterated_translate, elx_u_pairs_simple_transliterated_translate, elx_u_pairs_origional_transliterated_translate, elx_u_pairs_group_transliterated_translate
 
-
-# Read your data
-max_length = 60
-min_length = 1
-cuneiform_pad = max_length
-cuneiform_to_english_pad = int(max_length*0.62)
-transliterated_to_english_pad = int(max_length*0.71)
-train_pairs, val_pairs, test_pairs, pairs, akk_train_pairs_cuneiform_translate , akk_train_pairs_simple_transliterated_translate , akk_train_pairs_origional_transliterated_translate , akk_train_pairs_group_transliterated_translate , akk_train_pairs_transliterate_simple , akk_train_pairs_transliterate_origional , akk_train_pairs_transliterate_group , akk_train_pairs_group_simple_transliterate , akk_train_pairs_group_origional_transliterate , akk_train_rev_pairs_cuneiform_translate , akk_train_rev_pairs_simple_transliterated_translate , akk_train_rev_pairs_origional_transliterated_translate , akk_train_rev_pairs_group_transliterated_translate , akk_train_rev_pairs_transliterate_simple , akk_train_rev_pairs_transliterate_group , akk_train_rev_pairs_transliterate_origional , sux_train_pairs_simple_transliterated_translate , sux_train_pairs_origional_transliterated_translate , sux_train_pairs_group_transliterated_translate , sux_train_pairs_group_simple_transliterate , sux_train_rev_pairs_simple_transliterated_translate , sux_train_rev_pairs_origional_transliterated_translate , sux_train_rev_pairs_group_transliterated_translate , elx_train_pairs_simple_transliterated_translate , elx_train_pairs_origional_transliterated_translate , elx_train_pairs_group_transliterated_translate , elx_train_pairs_group_simple_transliterate , elx_train_rev_pairs_simple_transliterated_translate , elx_train_rev_pairs_origional_transliterated_translate , elx_train_rev_pairs_group_transliterated_translate , akk_test_pairs_cuneiform_translate , akk_test_pairs_simple_transliterated_translate , akk_test_pairs_origional_transliterated_translate , akk_test_pairs_group_transliterated_translate , akk_test_pairs_transliterate_simple , akk_test_pairs_transliterate_origional , akk_test_pairs_transliterate_group , akk_test_pairs_group_simple_transliterate , akk_test_pairs_group_origional_transliterate , akk_test_rev_pairs_cuneiform_translate , akk_test_rev_pairs_simple_transliterated_translate , akk_test_rev_pairs_origional_transliterated_translate , akk_test_rev_pairs_group_transliterated_translate , akk_test_rev_pairs_transliterate_simple , akk_test_rev_pairs_transliterate_group , akk_test_rev_pairs_transliterate_origional , sux_test_pairs_simple_transliterated_translate , sux_test_pairs_origional_transliterated_translate , sux_test_pairs_group_transliterated_translate , sux_test_pairs_group_simple_transliterate , sux_test_rev_pairs_simple_transliterated_translate , sux_test_rev_pairs_origional_transliterated_translate , sux_test_rev_pairs_group_transliterated_translate , akk_val_pairs_cuneiform_translate , akk_val_pairs_simple_transliterated_translate , akk_val_pairs_origional_transliterated_translate , akk_val_pairs_group_transliterated_translate , akk_val_pairs_transliterated_simple , akk_val_pairs_transliterated_origional , akk_val_pairs_transliterated_group , akk_val_pairs_group_simple_transliterate , akk_val_pairs_group_origional_transliterate , akk_val_rev_pairs_cuneiform_translate , akk_val_rev_pairs_simple_transliterated_translate , akk_val_rev_pairs_origional_transliterated_translate , akk_val_rev_pairs_group_transliterated_translate , akk_val_rev_pairs_transliterate_simple , akk_val_rev_pairs_transliterate_group , akk_val_rev_pairs_transliterate_origional , sux_val_pairs_simple_transliterated_translate , sux_val_pairs_origional_transliterated_translate , sux_val_pairs_group_transliterated_translate , sux_val_pairs_group_simple_transliterate , sux_val_rev_pairs_simple_transliterated_translate , sux_val_rev_pairs_origional_transliterated_translate , sux_val_rev_pairs_group_transliterated_translate = readLangs(5000, 5000, max_length_threshold=max_length, min_length_threshold= min_length)
-
-#akk_u_pairs_simple_transliterated_translate, akk_u_pairs_origional_transliterated_translate, akk_u_pairs_group_transliterated_translate, sux_u_pairs_simple_transliterated_translate, sux_u_pairs_origional_transliterated_translate, sux_u_pairs_group_transliterated_translate, elx_u_pairs_simple_transliterated_translate, elx_u_pairs_origional_transliterated_translate, elx_u_pairs_group_transliterated_translate = readLangsUnknown(5000, 5000, max_length_threshold=max_length, min_length_threshold= min_length)
-
-
-
-# Create data dictionaries
-train_data_dict = {"input": [pair[0] for pair in train_pairs], "target": [pair[1] for pair in train_pairs]}
-val_data_dict = {"input": [pair[0] for pair in val_pairs], "target": [pair[1] for pair in val_pairs]}
-test_data_dict = {"input": [pair[0] for pair in test_pairs], "target": [pair[1] for pair in test_pairs]}
-
-# Create datasets
-train_dataset = Dataset.from_dict(train_data_dict)
-val_dataset = Dataset.from_dict(val_data_dict)
-test_dataset = Dataset.from_dict(test_data_dict)
-
-#Testing Datasets
-#train_dataset = Dataset.from_dict(train_data_dict).select(range(1000))
-#val_dataset = Dataset.from_dict(val_data_dict).select(range(1000))
-#test_dataset = Dataset.from_dict(test_data_dict).select(range(1000))
-
-
-
-translations = DatasetDict({"train": train_dataset, "val": val_dataset, "test": test_dataset})
+akk_u_pairs_simple_transliterated_translate, akk_u_pairs_origional_transliterated_translate, akk_u_pairs_group_transliterated_translate, sux_u_pairs_simple_transliterated_translate, sux_u_pairs_origional_transliterated_translate, sux_u_pairs_group_transliterated_translate, elx_u_pairs_simple_transliterated_translate, elx_u_pairs_origional_transliterated_translate, elx_u_pairs_group_transliterated_translate = readLangsUnknown(5000, 5000, max_length_threshold=prediction_length, min_length_threshold= 1)
 
 
 model_path = os.path.join(user_directory, 'GitHub', 'results', 't5-base-p-l-akk-en-20241110-154709', 'checkpoint-864360')
 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False, local_files_only=True)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_path, local_files_only=True)
+qe_tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False, local_files_only=True)
+qe_model = AutoModelForSeq2SeqLM.from_pretrained(model_path, local_files_only=True)
+
 
 
 # Create data dictionaries
@@ -961,241 +689,175 @@ def remove_prompt(text):
 def translate_cuneiform_set(pairs, set='val', name="translated_cuneiform", check_prompt="Translate English to complex Akkadian transliteration: "):
     if not os.path.exists(os.path.join(model_path, 'evaluation')):
         os.makedirs(os.path.join(model_path, 'evaluation'))
-    set_data_dict = {"akk": [pair[0] for pair in pairs], "en": [pair[1] for pair in pairs]}
-    # Create datasets
-    set_dataset = Dataset.from_dict(set_data_dict)
-    translations = DatasetDict({"set": set_dataset})
-    results = []
-    # Initialize the pipeline outside the loop
-    pipe = Text2TextGenerationPipeline(
-        model=model, tokenizer=tokenizer, device='mps'
-    )
-    # Get the total number of examples
-    tokenized_datasets = DatasetDict({
-        "set": translations["set"].map(tokenize_function, batched=True),
-    })
-    total_examples = len(tokenized_datasets["set"])
-    for test_number in tqdm(range(total_examples), desc="Translating"):
-        example = tokenized_datasets["set"][test_number]
-        original = example['akk']
-        reference = example['en']
-        if len(reference.strip()) < 2:
-            #print(f"Skipping entry {test_number}: Reference is too short or empty.")
-            continue
-        # Generate predictions
-        predicted_texts = pipe(
-            original,
-            max_length=max_length,
-            truncation=True,
-            #skip_special_tokens=True,
-            #clean_up_tokenization_spaces=True
+    filepath = os.path.join(model_path, 'evaluation', f'{name}_{set}_set.csv')
+    if os.path.exists(filepath):
+        result_df = pd.read_csv(filepath)
+        print("     Results found, skipping")
+    else:
+        set_data_dict = {"akk": [pair[0] for pair in pairs], "en": [pair[1] for pair in pairs]}
+        # Create datasets
+        set_dataset = Dataset.from_dict(set_data_dict)
+        translations = DatasetDict({"set": set_dataset})
+        results = []
+        # Initialize the pipeline outside the loop
+        pipe = Text2TextGenerationPipeline(
+            model=model, tokenizer=tokenizer, device='mps'
         )
-        # Extract generated text and normalize spaces
-        predicted_text = predicted_texts[0]['generated_text'].strip()
-        # Apply the correction function
-        corrected_predicted_text = correct_split_words(predicted_text, tokenizer)
-        # return to origional data
-        #rev_predicted_text_prediction = pipe(
-        #    check_prompt + corrected_predicted_text,
-        #    max_length=max_length+6,
-        #    truncation=True,
-            #skip_special_tokens=True,
-            #clean_up_tokenization_spaces=True
-        #)
-        #rev_predicted_text =  rev_predicted_text_prediction[0]['generated_text'].strip()
-        # Calculate BLEU-4 score with error handling
-        try:
-            if not predicted_text.strip():
-                bleu_score = 0.0
-            else:
-                bleu = sacrebleu.sentence_bleu(
-                    predicted_text, [reference], smooth_method='floor', smooth_value=0.1
-                )
-                adjusted_bleu = sacrebleu.sentence_bleu(
-                    corrected_predicted_text, [reference], smooth_method='floor', smooth_value=0.1
-                )
-                #rev_bleu = sacrebleu.sentence_bleu(
-                #    rev_predicted_text, [remove_prompt(original)], smooth_method='floor', smooth_value=0.1
-                #)
-                bleu_score = bleu.score
-                adjusted_bleu_score = adjusted_bleu.score
-                #rev_bleu_score = rev_bleu.score
-        except EOFError as e:
-            print(f"Error processing entry {test_number}: {e}")
-            bleu_score = 0.0
-            adjusted_bleu_score = 0.0
-        # Append the results
-        results.append({
-            "Cuneiform": original,
-            "Reference": reference,
-            "Predicted": predicted_text,
-            "BLEU-4": bleu_score,
-            "Adjusted Predicted": corrected_predicted_text,
-            "Adjusted BLEU-4": adjusted_bleu_score
-            #"Reverse Translate": rev_predicted_text,
-            #"Reverse BLEU-4": rev_bleu_score
+        # Get the total number of examples
+        tokenized_datasets = DatasetDict({
+            "set": translations["set"].map(tokenize_function, batched=True),
         })
-    # Convert the list of dictionaries into a DataFrame
-    result_df = pd.DataFrame(results)
-    # Define the full path for the CSV file
-    csv_file_path = os.path.join(model_path, 'evaluation', f'{name}_{set}_set.csv')
-    # Save the DataFrame to a CSV file in the specified directory
-    result_df.to_csv(csv_file_path, index=False)
+        total_examples = len(tokenized_datasets["set"])
+        for test_number in tqdm(range(total_examples), desc="Translating"):
+            example = tokenized_datasets["set"][test_number]
+            original = example['akk']
+            reference = example['en']
+            if len(reference.strip()) < 2:
+                #print(f"Skipping entry {test_number}: Reference is too short or empty.")
+                continue
+            # Generate predictions
+            predicted_texts = pipe(
+                original,
+                max_length=max_length,
+                truncation=True,
+                #skip_special_tokens=True,
+                #clean_up_tokenization_spaces=True
+            )
+            # Extract generated text and normalize spaces
+            predicted_text = predicted_texts[0]['generated_text'].strip()
+            # Apply the correction function
+            corrected_predicted_text = correct_split_words(predicted_text, tokenizer)
+            # return to origional data
+            #rev_predicted_text_prediction = pipe(
+            #    check_prompt + corrected_predicted_text,
+            #    max_length=max_length+6,
+            #    truncation=True,
+                #skip_special_tokens=True,
+                #clean_up_tokenization_spaces=True
+            #)
+            #rev_predicted_text =  rev_predicted_text_prediction[0]['generated_text'].strip()
+            # Calculate BLEU-4 score with error handling
+            try:
+                if not predicted_text.strip():
+                    bleu_score = 0.0
+                else:
+                    bleu = sacrebleu.sentence_bleu(
+                        predicted_text, [reference], smooth_method='floor', smooth_value=0.1
+                    )
+                    adjusted_bleu = sacrebleu.sentence_bleu(
+                        corrected_predicted_text, [reference], smooth_method='floor', smooth_value=0.1
+                    )
+                    #rev_bleu = sacrebleu.sentence_bleu(
+                    #    rev_predicted_text, [remove_prompt(original)], smooth_method='floor', smooth_value=0.1
+                    #)
+                    bleu_score = bleu.score
+                    adjusted_bleu_score = adjusted_bleu.score
+                    #rev_bleu_score = rev_bleu.score
+            except EOFError as e:
+                print(f"Error processing entry {test_number}: {e}")
+                bleu_score = 0.0
+                adjusted_bleu_score = 0.0
+            # Append the results
+            results.append({
+                "Cuneiform": original,
+                "Reference": reference,
+                "Predicted": predicted_text,
+                "BLEU-4": bleu_score,
+                "Adjusted Predicted": corrected_predicted_text,
+                "Adjusted BLEU-4": adjusted_bleu_score
+                #"Reverse Translate": rev_predicted_text,
+                #"Reverse BLEU-4": rev_bleu_score
+            })
+        # Convert the list of dictionaries into a DataFrame
+        result_df = pd.DataFrame(results)
+        # Define the full path for the CSV file
+        csv_file_path = filepath
+        # Save the DataFrame to a CSV file in the specified directory
+        result_df.to_csv(csv_file_path, index=False)
     return result_df
     collected = gc.collect()
     print("Garbage collector: collected %d objects." % (collected))
 
-# Call the function
+def remove_prompt(text):
+    # Split the text at the first occurrence of ':'
+    parts = text.split(':', 1)
+    if len(parts) > 1:
+        # Return the part after the colon, stripping any leading/trailing whitespace
+        return parts[1].strip()
+    else:
+        # If no colon is found, return the original text
+        return text.strip()
 
-################
-###Validation###
-################
-print("Generating Validation Akkadian cuneiform translations")
-akk_val_pairs_cuneiform_translate_results = translate_cuneiform_set(akk_val_pairs_cuneiform_translate, 'val', 'akk_val_pairs_cuneiform_translate')
+def preprocess_function(examples):
+    ref_texts = examples['prompt']  # Adjusted to 'prompt' if that's your dataset's reference text column
+    pred_texts = examples['prediction']
+    bleu_scores = examples['bleu_score']
+    # Compute lengths of texts
+    ref_lengths = [len(text) for text in ref_texts]
+    pred_lengths = [len(text) for text in pred_texts]
+    # Tokenize reference texts
+    ref_encodings = qe_tokenizer(
+        ref_texts,
+        padding='max_length',
+        truncation=True,
+        max_length=128,
+    )
+    # Tokenize prediction texts
+    pred_encodings = qe_tokenizer(
+        pred_texts,
+        padding='max_length',
+        truncation=True,
+        max_length=128,
+    )
+    # Prepare labels
+    labels = bleu_scores
+    # Combine encodings and include lengths
+    encodings = {
+        'ref_input_ids': ref_encodings['input_ids'],
+        'ref_attention_mask': ref_encodings['attention_mask'],
+        'pred_input_ids': pred_encodings['input_ids'],
+        'pred_attention_mask': pred_encodings['attention_mask'],
+        'labels': labels,
+        'ref_length': ref_lengths,
+        'pred_length': pred_lengths,
+    }
+    return encodings
+
+def quality_estimation(result_frame):
+    result_frame = result_frame.dropna()
+    og_prompts = result_frame.iloc[:, 0].tolist()
+    prompts = list(map(remove_prompt, og_prompts))
+    predictions = result_frame['Adjusted Predicted'].tolist()
+    bleu_scores = result_frame['Adjusted BLEU-4'].tolist()
+    data_dict = {"prompt": [single for single in prompts], "prediction": [single for single in predictions], "bleu_score": [single for single in bleu_scores]}
+    dataset = Dataset.from_dict(data_dict)
+    translations = DatasetDict({"new": dataset})
+    dataset = dataset.map(preprocess_function, batched=True)
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################
+###Akkadian Origional Transliteration###
+########################################
+print("Generating New Akkadian Translations")
+try:
+    akk_u_pairs_origional_transliterated_translate_results = translate_cuneiform_set(akk_u_pairs_origional_transliterated_translate, 'new', 'akk_u_pairs_origional_transliterated_translate')
+    
+except NameError as e:
+    print("An error occurred:", str(e))
 print("Generating Validation Akkadian origional transliterated translations")
-akk_val_pairs_origional_transliterated_translate_results = translate_cuneiform_set(akk_val_pairs_origional_transliterated_translate, 'val', 'akk_val_pairs_origional_transliterated_translate')
-print("Generating Validation Akkadian simple transliterated translations")
-akk_val_pairs_simple_transliterated_translate_results = translate_cuneiform_set(akk_val_pairs_simple_transliterated_translate, 'val', 'akk_val_pairs_simple_transliterated_translate')
-print("Generating Validation Akkadian grouped transliterated translations")
-akk_val_pairs_group_transliterated_translate_results = translate_cuneiform_set(akk_val_pairs_group_transliterated_translate, 'val', 'akk_val_pairs_group_transliterated_translate')
-
-print("Generating Validation Akkadian cuneiform origional transliterations")
-akk_val_pairs_transliterated_origional_results = translate_cuneiform_set(akk_val_pairs_transliterated_origional, 'val', 'akk_val_pairs_transliterated_origional')
-print("Generating Validation Akkadian cuneiform simple transliterations")
-akk_val_pairs_transliterated_simple_results = translate_cuneiform_set(akk_val_pairs_transliterated_simple, 'val', 'akk_val_pairs_transliterated_simple')
-
-
-print("Generating Validation Akkadian cuneiform origional from transliterations")
-akk_val_rev_pairs_transliterate_origional_results = translate_cuneiform_set(akk_val_rev_pairs_transliterate_origional, 'val', 'akk_val_rev_pairs_transliterate_origional')
-print("Generating Validation Akkadian cuneiform simple from transliterations")
-akk_val_rev_pairs_transliterate_simple_results = translate_cuneiform_set(akk_val_rev_pairs_transliterate_simple, 'val', 'akk_val_rev_pairs_transliterate_simple')
-
-print("Generating Validation Sumerian origional transliterated translations")
-sux_val_pairs_origional_transliterated_translate_results = translate_cuneiform_set(sux_val_pairs_origional_transliterated_translate, 'val', 'sux_val_pairs_origional_transliterated_translate')
-print("Generating Validation Sumerian simple transliterated translations")
-sux_val_pairs_simple_transliterated_translate_results = translate_cuneiform_set(sux_val_pairs_simple_transliterated_translate, 'val', 'sux_val_pairs_simple_transliterated_translate')
-print("Generating Validation Akkadian grouped transliterated translations")
-sux_val_pairs_group_transliterated_translate_results = translate_cuneiform_set(sux_val_pairs_group_transliterated_translate, 'val', 'sux_val_pairs_group_transliterated_translate')
-
-print("Generating Validation Akkadian english-cuneiform translations")
-rev_akk_val_pairs_cuneiform_translate_results = translate_cuneiform_set(rev_akk_val_pairs_cuneiform_translate, 'val', 'rev_akk_val_pairs_cuneiform_translate')
-print("Generating Validation Akkadian english-origional transliterated translations")
-rev_akk_val_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_akk_val_pairs_origional_transliterated_translate, 'val', 'rev_akk_val_pairs_origional_transliterated_translate')
-print("Generating Validation Akkadian english-simple transliterated translations")
-rev_akk_val_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_akk_val_pairs_simple_transliterated_translate, 'val', 'rev_akk_val_pairs_simple_transliterated_translate')
-print("Generating Validation Akkadian english-grouped transliterated translations")
-rev_akk_val_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_akk_val_pairs_group_transliterated_translate, 'val', 'rev_akk_val_pairs_group_transliterated_translate')
-
-print("Generating Validation Sumerian english-origional transliterated translations")
-rev_sux_val_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_sux_val_pairs_origional_transliterated_translate, 'val', 'rev_sux_val_pairs_origional_transliterated_translate')
-print("Generating Validation Sumerian englihs-simple transliterated translations")
-rev_sux_val_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_sux_val_pairs_simple_transliterated_translate, 'val', 'rev_sux_val_pairs_simple_transliterated_translate')
-print("Generating Validation Akkadian english-grouped transliterated translations")
-rev_sux_val_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_sux_val_pairs_group_transliterated_translate, 'val', 'rev_sux_val_pairs_group_transliterated_translate')
-
-##########
-###Test###
-##########
-print("Generating Test Akkadian cuneiform translations")
-akk_test_pairs_cuneiform_translate_results = translate_cuneiform_set(akk_test_pairs_cuneiform_translate, 'test', 'akk_val_pairs_cuneiform_translate')
-print("Generating Test Akkadian origional transliterated translations")
-akk_test_pairs_origional_transliterated_translate_results = translate_cuneiform_set(akk_test_pairs_origional_transliterated_translate, 'test', 'akk_test_pairs_origional_transliterated_translate')
-print("Generating Test Akkadian simple transliterated translations")
-akk_test_pairs_simple_transliterated_translate_results = translate_cuneiform_set(akk_test_pairs_simple_transliterated_translate, 'test', 'akk_test_pairs_simple_transliterated_translate')
-print("Generating Test Akkadian grouped transliterated translations")
-akk_test_pairs_group_transliterated_translate_results = translate_cuneiform_set(akk_test_pairs_group_transliterated_translate, 'test', 'akk_test_pairs_group_transliterated_translate')
-
-print("Generating Test Akkadian cuneiform origional transliterations")
-akk_test_pairs_transliterated_origional_results = translate_cuneiform_set(akk_test_pairs_transliterated_origional, 'test', 'akk_test_pairs_transliterated_origional')
-print("Generating Test Akkadian cuneiform simple transliterations")
-akk_test_pairs_transliterated_simple_results = translate_cuneiform_set(akk_test_pairs_transliterated_simple, 'test', 'akk_test_pairs_transliterated_simple')
-
-
-print("Generating Test Akkadian cuneiform origional from transliterations")
-akk_test_rev_pairs_transliterate_origional_results = translate_cuneiform_set(akk_val_rev_pairs_transliterate_origional, 'test', 'akk_test_rev_pairs_transliterate_origional')
-print("Generating Test Akkadian cuneiform simple from transliterations")
-akk_test_rev_pairs_transliterate_simple_results = translate_cuneiform_set(akk_testrev_pairs_transliterate_simple, 'test', 'akk_test_rev_pairs_transliterate_simple')
-
-print("Generating Test Sumerian origional transliterated translations")
-sux_test_pairs_origional_transliterated_translate_results = translate_cuneiform_set(sux_test_pairs_origional_transliterated_translate, 'test', 'sux_test_pairs_origional_transliterated_translate')
-print("Generating Test Sumerian simple transliterated translations")
-sux_test_pairs_simple_transliterated_translate_results = translate_cuneiform_set(sux_test_pairs_simple_transliterated_translate, 'test', 'sux_test_pairs_simple_transliterated_translate')
-print("Generating Test Akkadian grouped transliterated translations")
-sux_test_pairs_group_transliterated_translate_results = translate_cuneiform_set(sux_test_pairs_group_transliterated_translate, 'test', 'sux_test_pairs_group_transliterated_translate')
-
-print("Generating Test Akkadian english-cuneiform translations")
-rev_akk_val_pairs_cuneiform_translate_results = translate_cuneiform_set(rev_akk_test_pairs_cuneiform_translate, 'test', 'rev_akk_test_pairs_cuneiform_translate')
-print("Generating Test Akkadian english-origional transliterated translations")
-rev_akk_test_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_akk_test_pairs_origional_transliterated_translate, 'test', 'rev_akk_test_pairs_origional_transliterated_translate')
-print("Generating Test Akkadian english-simple transliterated translations")
-rev_akk_test_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_akk_test_pairs_simple_transliterated_translate, 'test', 'rev_akk_test_pairs_simple_transliterated_translate')
-print("Generating Test Akkadian english-grouped transliterated translations")
-rev_akk_test_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_akk_test_pairs_group_transliterated_translate, 'test', 'rev_akk_test_pairs_group_transliterated_translate')
-
-print("Generating Test Sumerian english-origional transliterated translations")
-rev_sux_test_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_sux_test_pairs_origional_transliterated_translate, 'test', 'rev_sux_test_pairs_origional_transliterated_translate')
-print("Generating Test Sumerian englihs-simple transliterated translations")
-rev_sux_test_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_sux_test_pairs_simple_transliterated_translate, 'test', 'rev_sux_test_pairs_simple_transliterated_translate')
-print("Generating Test Akkadian english-grouped transliterated translations")
-rev_sux_test_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_sux_test_pairs_group_transliterated_translate, 'test', 'rev_sux_test_pairs_group_transliterated_translate')
-
-###########
-###Train###
-###########
-print("Generating Train Akkadian cuneiform translations")
-akk_train_pairs_cuneiform_translate_results = translate_cuneiform_set(akk_train_pairs_cuneiform_translate, 'train', 'akk_train_pairs_cuneiform_translate')
-print("Generating Train Akkadian origional transliterated translations")
-akk_train_pairs_origional_transliterated_translate_results = translate_cuneiform_set(akk_train_pairs_origional_transliterated_translate, 'train', 'akk_train_pairs_origional_transliterated_translate')
-print("Generating Train Akkadian simple transliterated translations")
-akk_train_pairs_simple_transliterated_translate_results = translate_cuneiform_set(akk_train_pairs_simple_transliterated_translate, 'train', 'akk_train_pairs_simple_transliterated_translate')
-print("Generating Train Akkadian grouped transliterated translations")
-akk_train_pairs_group_transliterated_translate_results = translate_cuneiform_set(akk_train_pairs_group_transliterated_translate, 'train', 'akk_train_pairs_group_transliterated_translate')
-
-print("Generating Train Akkadian cuneiform origional transliterations")
-akk_train_pairs_transliterated_origional_results = translate_cuneiform_set(akk_train_pairs_transliterated_origional, 'train', 'akk_train_pairs_transliterated_origional')
-print("Generating Train Akkadian cuneiform simple transliterations")
-akk_train_pairs_transliterated_simple_results = translate_cuneiform_set(akk_train_pairs_transliterated_simple, 'val', 'akk_train_pairs_transliterated_simple')
-
-
-print("Generating Train Akkadian cuneiform origional from transliterations")
-akk_train_rev_pairs_transliterate_origional_results = translate_cuneiform_set(akk_train_rev_pairs_transliterate_origional, 'train', 'akk_train_rev_pairs_transliterate_origional')
-print("Generating Train Akkadian cuneiform simple from transliterations")
-akk_train_rev_pairs_transliterate_simple_results = translate_cuneiform_set(akk_train_rev_pairs_transliterate_simple, 'val', 'akk_val_rev_pairs_transliterate_simple')
-
-print("Generating Train Sumerian origional transliterated translations")
-sux_train_pairs_origional_transliterated_translate_results = translate_cuneiform_set(sux_train_pairs_origional_transliterated_translate, 'train', 'sux_val_pairs_origional_transliterated_translate')
-print("Generating Train Sumerian simple transliterated translations")
-sux_train_pairs_simple_transliterated_translate_results = translate_cuneiform_set(sux_train_pairs_simple_transliterated_translate, 'train', 'sux_train_pairs_simple_transliterated_translate')
-print("Generating Train Akkadian grouped transliterated translations")
-sux_train_pairs_group_transliterated_translate_results = translate_cuneiform_set(sux_train_pairs_group_transliterated_translate, 'train', 'sux_train_pairs_group_transliterated_translate')
-
-print("Generating Train Akkadian english-cuneiform translations")
-rev_akk_train_pairs_cuneiform_translate_results = translate_cuneiform_set(rev_akk_train_pairs_cuneiform_translate, 'train', 'rev_akk_train_pairs_cuneiform_translate')
-print("Generating Train Akkadian english-origional transliterated translations")
-rev_akk_train_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_akk_train_pairs_origional_transliterated_translate, 'train', 'rev_akk_train_pairs_origional_transliterated_translate')
-print("Generating Train Akkadian english-simple transliterated translations")
-rev_akk_train_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_akk_train_pairs_simple_transliterated_translate, 'train', 'rev_akk_train_pairs_simple_transliterated_translate')
-print("Generating Train Akkadian english-grouped transliterated translations")
-rev_akk_train_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_akk_train_pairs_group_transliterated_translate, 'train', 'rev_akk_train_pairs_group_transliterated_translate')
-
-print("Generating Train Sumerian english-origional transliterated translations")
-rev_sux_train_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_sux_train_pairs_origional_transliterated_translate, 'train', 'rev_sux_train_pairs_origional_transliterated_translate')
-print("Generating Train Sumerian englihs-simple transliterated translations")
-rev_sux_train_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_sux_train_pairs_simple_transliterated_translate, 'train', 'rev_sux_val_pairs_simple_transliterated_translate')
-print("Generating Train Akkadian english-grouped transliterated translations")
-rev_sux_train_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_sux_train_pairs_group_transliterated_translate, 'train', 'rev_sux_train_pairs_group_transliterated_translate')
-
-
-print("Generating Train Elamite origional transliterated translations")
-elx_train_pairs_origional_transliterated_translate_results = translate_cuneiform_set(elx_train_pairs_origional_transliterated_translate, 'train', 'elx_val_pairs_origional_transliterated_translate')
-print("Generating Train Elamite simple transliterated translations")
-elx_train_pairs_simple_transliterated_translate_results = translate_cuneiform_set(elx_train_pairs_simple_transliterated_translate, 'train', 'elx_train_pairs_simple_transliterated_translate')
-print("Generating Train Elamite grouped transliterated translations")
-elx_train_pairs_group_transliterated_translate_results = translate_cuneiform_set(elx_train_pairs_group_transliterated_translate, 'train', 'elx_train_pairs_group_transliterated_translate')
-
-print("Generating Train Elamite english-origional transliterated translations")
-rev_elx_train_pairs_origional_transliterated_translate_results = translate_cuneiform_set(rev_elx_train_pairs_origional_transliterated_translate, 'train', 'rev_elx_train_pairs_origional_transliterated_translate')
-print("Generating Train Elamite englihs-simple transliterated translations")
-rev_elx_train_pairs_simple_transliterated_translate_results = translate_cuneiform_set(rev_elx_train_pairs_simple_transliterated_translate, 'train', 'rev_elx_val_pairs_simple_transliterated_translate')
-print("Generating Train Elamite english-grouped transliterated translations")
-rev_elx_train_pairs_group_transliterated_translate_results = translate_cuneiform_set(rev_elx_train_pairs_group_transliterated_translate, 'train', 'rev_elx_train_pairs_group_transliterated_translate')
