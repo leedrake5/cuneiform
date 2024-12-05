@@ -1118,12 +1118,12 @@ except NameError as e:
 
 print("Generating Test Akkadian cuneiform origional transliterations")
 try:
-    akk_test_pairs_transliterated_origional_results = translate_cuneiform_set(akk_test_pairs_transliterated_origional, 'test', 'akk_test_pairs_transliterated_origional')
+    akk_test_pairs_transliterate_origional_results = translate_cuneiform_set(akk_test_pairs_transliterate_origional, 'test', 'akk_test_pairs_transliterate_origional')
 except NameError as e:
     print("An error occurred:", str(e))
 print("Generating Test Akkadian cuneiform simple transliterations")
 try:
-    akk_test_pairs_transliterated_simple_results = translate_cuneiform_set(akk_test_pairs_transliterated_simple, 'test', 'akk_test_pairs_transliterated_simple')
+    akk_test_pairs_transliterate_simple_results = translate_cuneiform_set(akk_test_pairs_transliterate_simple, 'test', 'akk_test_pairs_transliterate_simple')
 except NameError as e:
     print("An error occurred:", str(e))
 

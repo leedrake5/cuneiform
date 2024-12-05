@@ -161,15 +161,26 @@ class TranslationQualityEstimator(PreTrainedModel):
     def __init__(self, config):
         super().__init__(config)
         model_name = config.model_name_or_path
-        self.encoder = base_model
+        self.encoder = base_model  # Use your pre-loaded base model
         hidden_size = self.encoder.config.hidden_size
-        # Adjust input size to include lengths (add 2 for 'ref_length' and 'pred_length')
-        self.regressor = nn.Sequential(
-            nn.Linear(hidden_size * 2 + 2, hidden_size),
-            nn.ReLU(),
-            nn.Dropout(0.1),
-            nn.Linear(hidden_size, 1)
+        # Define convolutional layers
+        self.conv1 = nn.Conv1d(
+            in_channels=hidden_size,
+            out_channels=hidden_size,
+            kernel_size=3,
+            padding=1  # 'same' padding
         )
+        self.conv2 = nn.Conv1d(
+            in_channels=hidden_size,
+            out_channels=hidden_size,
+            kernel_size=3,
+            padding=1
+        )
+        self.relu = nn.ReLU()
+        self.dropout = nn.Dropout(0.1)
+        # Define fully connected layers
+        self.fc1 = nn.Linear(hidden_size * 2 + 2, hidden_size)
+        self.fc2 = nn.Linear(hidden_size, 1)
         self.loss_fn = nn.MSELoss()
     def forward(
         self,
@@ -193,19 +204,40 @@ class TranslationQualityEstimator(PreTrainedModel):
             attention_mask=pred_attention_mask,
             return_dict=True,
         )
-        # Get pooled outputs
-        ref_embedding = ref_outputs.pooler_output
-        pred_embedding = pred_outputs.pooler_output
+        # Get last hidden states (batch_size, seq_length, hidden_size)
+        ref_embedding = ref_outputs.last_hidden_state
+        pred_embedding = pred_outputs.last_hidden_state
+        # Transpose to (batch_size, hidden_size, seq_length)
+        ref_embedding = ref_embedding.transpose(1, 2)
+        pred_embedding = pred_embedding.transpose(1, 2)
+        # Apply Conv1D and Dropout to reference embeddings
+        ref_conv = self.conv1(ref_embedding)
+        ref_conv = self.relu(ref_conv)
+        ref_conv = self.dropout(ref_conv)
+        ref_conv = self.conv2(ref_conv)
+        ref_conv = self.relu(ref_conv)
+        ref_conv = self.dropout(ref_conv)
+        # Apply Conv1D and Dropout to prediction embeddings
+        pred_conv = self.conv1(pred_embedding)
+        pred_conv = self.relu(pred_conv)
+        pred_conv = self.dropout(pred_conv)
+        pred_conv = self.conv2(pred_conv)
+        pred_conv = self.relu(pred_conv)
+        pred_conv = self.dropout(pred_conv)
+        # Global Max Pooling over the sequence length
+        ref_pooled = torch.max(ref_conv, dim=2)[0]  # Shape: (batch_size, hidden_size)
+        pred_pooled = torch.max(pred_conv, dim=2)[0]  # Shape: (batch_size, hidden_size)
+        # Combine embeddings and lengths
         # Convert lengths to tensors and normalize if necessary
         ref_length = ref_length.unsqueeze(1).float()
         pred_length = pred_length.unsqueeze(1).float()
-        # Optionally normalize lengths (e.g., divide by max_length)
-        # ref_length = ref_length / max_length
-        # pred_length = pred_length / max_length
         # Concatenate embeddings and lengths
-        combined_embedding = torch.cat((ref_embedding, pred_embedding, ref_length, pred_length), dim=1)
-        # Predict scores
-        logits = self.regressor(combined_embedding).squeeze(-1)
+        combined_embedding = torch.cat((ref_pooled, pred_pooled, ref_length, pred_length), dim=1)
+        # Pass through fully connected layers
+        x = self.fc1(combined_embedding)
+        x = self.relu(x)
+        x = self.dropout(x)
+        logits = self.fc2(x).squeeze(-1)  # Output shape: (batch_size)
         outputs = {'logits': logits}
         if labels is not None:
             loss = self.loss_fn(logits, labels)
